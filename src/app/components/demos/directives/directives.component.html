@@ -1,0 +1,17 @@
+<h2>Directives</h2>
+
+<p *ngIf="coucou">
+  Marc a dit coucou.
+</p>
+
+<button (click)="isCoucou()">
+  Fais en sorte que quelqu'un dise coucou.
+</button>
+
+<p>
+  Affichage d'une for loop
+</p>
+
+<ul>
+  <li *ngFor="let elem of messages" id={{elem.id}}>{{elem.msg}}</li>
+</ul>

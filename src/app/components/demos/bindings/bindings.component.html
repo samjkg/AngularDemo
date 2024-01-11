@@ -1,0 +1,15 @@
+<div>
+  <h4>Afficher valeur variable (Binding One-way)</h4>
+  <p>{{title}}</p>
+
+  <h4>Modifier valeur variable (Binding Two-way)</h4>
+  <input type="text" [(ngModel)]="title" />
+
+  <h4>Modifier valeur variable (Event)</h4>
+  <input type="button" value="Click moi pour changer la variable title" (click)="changeMe()">
+
+  <h4>Modifier attribut élément HTML (Event)</h4>
+  <input type="button" value="Click moi pour me désactiver et encourager Marc"
+         (click)="disableMe()"
+         [disabled]="enabled">
+</div>

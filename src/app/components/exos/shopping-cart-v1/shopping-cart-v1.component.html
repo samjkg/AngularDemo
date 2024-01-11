@@ -1,0 +1,27 @@
+<section class="cart-container">
+  <article class="product-item">
+    <div *ngFor="let article of articles">
+      <img [src]="article.image" alt="Image de l'article" />
+      <h3>{{ article.name }}</h3>
+      <p>Prix: {{ article.price }}</p>
+      <button (click)="addToCart(article)">Ajouter au panier</button>
+    </div>
+  </article>
+
+
+  <article *ngIf="cart" class="shopping-cart">
+    <h2 *ngIf="total !== 0">Panier : {{total.toFixed(2)}}</h2>
+    <ng-template #elseBlock>
+      <h2>Panier</h2>
+    </ng-template>
+    <ul>
+      <li *ngFor="let article of cart">
+        {{ article.name }}
+        - Quantité: {{ article.quantity | transformNumToString }}
+        - Total: {{ (article.price * article.quantity).toFixed(2) }}
+        <button *ngIf="article.quantity > 0" (click)="removeFromCart(article)">Retirer du panier</button>
+      </li>
+    </ul>
+  </article>
+</section>
+

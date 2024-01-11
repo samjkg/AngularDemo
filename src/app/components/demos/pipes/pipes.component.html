@@ -1,0 +1,18 @@
+<div>
+  <p>{{upper | uppercase}}</p>
+  <h3>{{lower | lowercase}}</h3>
+
+  <br>
+
+  <h2>{{dateDuJour | date: 'short'}}</h2>
+
+  <h1>Custom Pipe</h1>
+
+  <p>Fahrenheit vers Celsius</p>
+  <input type="text" [(ngModel)]="tempF">
+  <p>{{tempF | tempConvert: 'C'}} F</p>
+
+  <p>Celsius vers Fahrenheit</p>
+  <input type="text" [(ngModel)]="tempC">
+  <p>{{tempC | tempConvert: 'F'}} C</p>
+</div>
