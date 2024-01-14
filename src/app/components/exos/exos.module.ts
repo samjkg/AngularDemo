@@ -6,6 +6,9 @@ import { ExosComponent } from './exos.component';
 import { ChronoComponent } from './chrono/chrono.component';
 import { ShoppingCartV1Component } from './shopping-cart-v1/shopping-cart-v1.component';
 import { TransformNumToStringPipe } from './shopping-cart-v1/transform-num-to-string.pipe';
+import { ShoppingListParentComponent } from './shopping-cart-v2/shopping-list-parent/shopping-list-parent.component';
+import { ShoppingListChildComponent } from './shopping-cart-v2/shopping-list-child/shopping-list-child.component';
+import { ShoppingCartV3Component } from './shopping-cart-v3/shopping-cart-v3.component';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { TransformNumToStringPipe } from './shopping-cart-v1/transform-num-to-st
     ExosComponent,
     ChronoComponent,
     ShoppingCartV1Component,
-    TransformNumToStringPipe
+    TransformNumToStringPipe,
+    ShoppingListParentComponent,
+    ShoppingListChildComponent,
+    ShoppingCartV3Component,
   ],
   imports: [
     CommonModule,

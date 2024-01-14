@@ -1,0 +1,49 @@
+
+.body {
+  margin: 3rem 3rem;
+}
+
+#all-items-container {
+  border: 1px solid black;
+  border-radius: 25px;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.item-img {
+  border: 2px solid black;
+  border-radius: 30px;
+  max-width: 200px;
+}
+.item-price {
+  text-align: center;
+}
+
+.item-btn {
+  background-color: rgba(40, 211, 40, 0.45);
+  border-radius: 20px;
+}
+
+.cart-item {
+  align: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.removebtn {
+  background-color: red;
+  max-height: 25px;
+  align-self: center;
+}

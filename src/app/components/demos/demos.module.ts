@@ -10,6 +10,7 @@ import { TempConvertPipe } from './pipes/temp-convert.pipe';
 import { DirectivesComponent } from './directives/directives.component';
 import { ParentComponent } from './input-ouput/parent/parent.component';
 import { EnfantComponent } from './input-ouput/enfant/enfant.component';
+import { FakeAuthExerciseComponent } from './fake-auth-exercise/fake-auth-exercise.component';
 
 
 
@@ -22,6 +23,7 @@ import { EnfantComponent } from './input-ouput/enfant/enfant.component';
     DirectivesComponent,
     ParentComponent,
     EnfantComponent,
+    FakeAuthExerciseComponent,
   ],
   imports: [
     CommonModule,

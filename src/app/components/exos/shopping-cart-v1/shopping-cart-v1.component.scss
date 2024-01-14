@@ -79,6 +79,31 @@
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .product-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      img {
+        margin-right: auto;
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+
+    .shopping-cart ul li {
+      flex-direction: column;
+      align-items: flex-start;
+
+      button {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  }
 }
-
-

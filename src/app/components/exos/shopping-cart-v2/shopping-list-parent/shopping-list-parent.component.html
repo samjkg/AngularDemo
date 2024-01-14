@@ -1,0 +1,50 @@
+<div class="body">
+  <div id="all-items-container">
+
+    <div class="item-container" *ngFor="let item of itemList">
+
+      <app-shopping-list-child
+        [name] = "item.itemName"
+        [price] = "item.itemPrice"
+        [id] = "item.itemID"
+        [url] = "item.imgUrl"
+        (addToCartRequest) = "addToCartRequest($event)"
+      ></app-shopping-list-child>
+
+
+    </div>
+
+  </div>
+
+  <h3>{{cart.totalAmount > 0 ? cart.totalAmount.toFixed(2) : 0}}€</h3>
+
+  <div>
+    <div *ngFor="let item of cart.itemList" class="cart-item">
+      <input type="button" value="X" (click)="cart.RemoveOne(item)" class="removebtn"><p>{{item.itemName}} x {{item.amount}}</p>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="body">-->
+
+<!--  <div id="all-items-container">-->
+<!--    <div *ngFor="let item of itemList" class="item-container">-->
+
+<!--      <h2  class="item-title">{{item.itemName}}</h2>-->
+<!--      <img src="{{item.imgUrl}}" class="item-img">-->
+<!--      <h4 class="item-price">{{item.itemPrice}}€</h4>-->
+<!--      <input type="button" value="Add To Cart" (click)="item.AddToCart(cart)" class="item-btn">-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <h3>{{cart.totalAmount > 0 ? cart.totalAmount.toFixed(2) : 0}}€</h3>-->
+
+<!--  <div>-->
+<!--    <div *ngFor="let item of cart.itemList" class="cart-item">-->
+<!--      <input type="button" value="X" (click)="cart.RemoveOne(item)" class="removebtn"><p>{{item.itemName}} x {{item.amount}}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+

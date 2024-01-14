@@ -9,6 +9,7 @@ export class EnfantComponent {
 
   @Output() banCharacter: EventEmitter<number> = new EventEmitter<number>();
 
+
   @Input() id: number = 0;
   @Input() name: string = '';
   @Input() ranked: number = 0;
