@@ -1,0 +1,33 @@
+<section class="row">
+  <h2>Reactive Forms Demo</h2>
+
+  <form [formGroup]="formUser" class="col s12" (ngSubmit)="submitUserForm()">
+    <div class="input-field col s6">
+      <input type="text" formControlName="lastName" placeholder="Last Name ..">
+
+      <ng-container *ngIf="formUser.controls['lastName'].errors && formUser.controls['lastName'].touched">
+        <span *ngIf="formUser.controls['lastName'].errors?.['required']">
+          Ce Champ est requis.
+        </span>
+        <span *ngIf="formUser.controls['lastName'].errors?.['minlength']">
+          Le nom doit contenir au moins 3 caractères.
+        </span>
+      </ng-container>
+
+      <input type="text" formControlName="firstName" placeholder="First Name..">
+      <ng-container *ngIf="formUser.controls['firstName'].errors && formUser.controls['firstName'].touched">
+        <span *ngIf="formUser.controls['firstName'].errors?.['maxlength']">
+          Le nom ne doit pas dépasser 20 caractères.
+        </span>
+      </ng-container>
+
+      <input type="text" formControlName="phone" placeholder="0488888888">
+      <ng-container *ngIf="formUser.controls['phone'].touched">
+        <span *ngIf="formUser.controls['phone'].errors?.['tel']">
+          {{ formUser.controls['phone'].errors?.['tel'] }}
+        </span>
+      </ng-container>
+    </div>
+    <button type="submit" *ngIf="formUser.valid" class="card-panel light-green accent">Submit</button>
+  </form>
+</section>

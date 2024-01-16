@@ -1,0 +1,109 @@
+<section class="row">
+  <h2>CV Form</h2>
+  <form [formGroup]="cvForm" class="col s12" (ngSubmit)="submit()">
+    <div class="input-field col s6">
+
+<!--      LastName-->
+      <input type="text" formControlName="lastName" placeholder="Last Name..">
+      <ng-container *ngIf="cvForm.controls['lastName'].errors && cvForm.controls['lastName'].touched">
+          <span *ngIf="cvForm.controls['lastName'].errors?.['required']">
+            This field is required
+          </span>
+        <span *ngIf="cvForm.controls['lastName'].errors?.['minlength']">
+            Must be at least 3 characters
+          </span>
+        <span *ngIf="cvForm.controls['lastName'].errors?.['maxlength']">
+            Maximum 20 characters
+          </span>
+      </ng-container>
+
+
+      <!--      FirstName-->
+
+      <input type="text" formControlName="firstName" placeholder="First Name..">
+      <ng-container *ngIf="cvForm.controls['firstName'].errors && cvForm.controls['firstName'].touched">
+          <span *ngIf="cvForm.controls['firstName'].errors?.['required']">
+            This field is required
+          </span>
+        <span *ngIf="cvForm.controls['firstName'].errors?.['minlength']">
+            Must be at least 2 characters
+          </span>
+        <span *ngIf="cvForm.controls['firstName'].errors?.['maxlength']">
+            Maximum 20 characters
+          </span>
+      </ng-container>
+
+
+      <!--      Email-->
+
+      <input type="text" formControlName="email" placeholder="Email..">
+      <ng-container *ngIf="cvForm.controls['email'].errors && cvForm.controls['email'].touched">
+          <span *ngIf="cvForm.controls['email'].errors?.['required']">
+            This field is required
+          </span>
+        <span *ngIf="cvForm.controls['email'].errors?.['email']">
+            Must be a valid email address
+          </span>
+      </ng-container>
+
+
+      <!--      Email-->
+
+      <input type="text" formControlName="phone" placeholder="0488888888">
+      <ng-container *ngIf="cvForm.controls['phone'].touched">
+        <span *ngIf="cvForm.controls['phone'].errors?.['tel']">
+          {{ cvForm.controls['phone'].errors?.['tel'] }}
+        </span>
+      </ng-container>
+
+      <!--      Nickname-->
+
+      <input type="text" formControlName="nickname" placeholder="Nickname..">
+      <ng-container *ngIf="cvForm.controls['nickname'].errors && cvForm.controls['nickname'].touched">
+          <span *ngIf="cvForm.controls['nickname'].errors?.['required']">
+            This field is required
+          </span>
+        <span *ngIf="cvForm.controls['nickname'].errors?.['minlength']">
+            Must be at least 3 characters
+          </span>
+        <span *ngIf="cvForm.controls['nickname'].errors?.['maxlength']">
+            Maximum 20 characters
+          </span>
+      </ng-container>
+
+
+      <!--      Job-->
+
+      <input type="text" formControlName="job" placeholder="Job..">
+      <ng-container *ngIf="cvForm.controls['job'].errors && cvForm.controls['job'].touched">
+          <span *ngIf="cvForm.controls['job'].errors?.['required']">
+            This field is required
+          </span>
+        <span *ngIf="cvForm.controls['job'].errors?.['minlength']">
+            Must be at least 5 characters
+          </span>
+        <span *ngIf="cvForm.controls['job'].errors?.['maxlength']">
+            Maximum 50 characters
+          </span>
+      </ng-container>
+
+
+      <!--      Job Desc-->
+
+      <input type="text" formControlName="jobDesc" placeholder="Job Description..">
+      <ng-container *ngIf="cvForm.controls['jobDesc'].errors && cvForm.controls['jobDesc'].touched">
+          <span *ngIf="cvForm.controls['jobDesc'].errors?.['required']">
+            This field is required
+          </span>
+        <span *ngIf="cvForm.controls['jobDesc'].errors?.['maxlength']">
+            Maximum 50 characters
+          </span>
+      </ng-container>
+
+
+
+
+
+    </div>
+  </form>
+</section>

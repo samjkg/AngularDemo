@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <h3>{{cart.totalAmount > 0 ? cart.totalAmount.toFixed(2) : 0}}€</h3>
+  <h3>{{cart.totalAmount > 0 ? cart.totalAmount.toFixed(2) : 0}}$</h3><button (click)="navigateToFinalize()">Finalize</button>
 
   <div>
     <div *ngFor="let item of cart.itemList" class="cart-item">

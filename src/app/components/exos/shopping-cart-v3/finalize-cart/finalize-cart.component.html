@@ -1,0 +1,11 @@
+<div class="cart-container">
+  <div class="cart-item" *ngFor="let item of rawData">
+    <h5>{{item.itemName}}</h5>
+    <h5>X{{item.amount}}</h5>
+    <h5>{{item.itemPrice * item.amount}}€</h5>
+  </div>
+</div>
+<div class="total-container">
+  <h2>Total</h2>
+  <h3>{{calculateTotal()}}€</h3>
+</div>

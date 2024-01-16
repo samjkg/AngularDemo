@@ -1,0 +1,47 @@
+<form [formGroup]="myForm" (ngSubmit)="sendInfo()">
+
+  Value: {{myForm.value | json}}
+
+  <hr>
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="email" formControlName="email">
+
+    <mat-error *ngIf="email?.invalid && email?.touched">
+      Your Email Doesn't look right
+    </mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput placeholder="password" formControlName="password">
+    <mat-hint align="end" *ngIf="password?.invalid">Password must contain at least one lowercase letter, one uppercase,
+    one number, and one special character, and be within 6 and 72 characters</mat-hint>
+    <mat-error *ngIf="password?.invalid && password?.touched">
+      Password doesn't respect guidelines
+    </mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput placeholder="age" [value]="0" formControlName="age">
+    <mat-error *ngIf="age?.errors?.['min'] && age?.touched">
+      You are too young to use this app
+    </mat-error>
+
+    <mat-error *ngIf="age?.errors?.['max'] && age?.touched">
+      You are too old to use this app
+    </mat-error>
+
+  </mat-form-field>
+
+  <mat-checkbox formControlName="agree" color="primary">Are you sure?</mat-checkbox>
+
+
+  <br><br><br><br><br><br><br><br><br><br>
+  <hr>
+
+  <button mat-raised-button [disabled]="myForm.invalid" color="primary">Submit</button>
+
+</form>
